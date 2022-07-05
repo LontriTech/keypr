@@ -35,4 +35,5 @@ jobs:
           labels: |
             org.opencontainers.image.revision=${{ github.sha }}
             org.opencontainers.image.version=${{ steps.image_tag.outputs.image_tag }}
+            org.opencontainers.image.created=$(date --rfc-3339=seconds | sed 's/ /T/')
           push: ${{ github.ref == 'refs/heads/main' }}
