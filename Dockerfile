@@ -14,11 +14,12 @@ WORKDIR /app
 
 ENV PYTHONPATH /app
 
+RUN useradd -m python
+
 RUN mkdir /github \ 
     && mkdir /github/home \
-    && mkdir /github/home/.config
-
-RUN useradd -m python
+    && mkdir /github/home/.config \
+    && chown python:python /github
 
 COPY --chown=python:python requirements.txt ./
 
