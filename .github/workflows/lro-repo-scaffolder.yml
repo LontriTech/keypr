@@ -1,3 +1,5 @@
+name: "Run LRO Repo Scaffolder"
+
 on: [push]
 
 permissions: write-all
