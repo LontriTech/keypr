@@ -6,6 +6,6 @@ jobs:
     name: "Run LRO Repo Scaffolder"
     steps:
       - name: 'LRO Repo Scaffolder'
-        uses: actions/lro-repo-scaffolder-action@v0.0.1
+        uses: oleonardorodrigues/lro-repo-scaffolder-action@v0.0.1
         with:
           config-file: 'lro_repo_scaffolder.ini'
