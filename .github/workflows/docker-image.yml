@@ -8,10 +8,10 @@ jobs:
   docker-build-and-push:
     name: "Build and Publish Docker Image"
     runs-on: ubuntu-latest
-    steps:
-      - name: Get current date
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+    steps:        
+      - name: Set Image Tag
+        run: echo "::set-output name=image_tag::$(date +'%Y-%m-%d')-${{ github.run_number }}"
+        id: image_tag
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -31,5 +31,8 @@ jobs:
         with:
           tags: |
             ghcr.io/oleonardorodrigues/lro-repo-scaffolder:latest
-            ghcr.io/oleonardorodrigues/lro-repo-scaffolder:${{ steps.date.outputs.date }}-${{ github.run_number }}
+            ghcr.io/oleonardorodrigues/lro-repo-scaffolder:${{ steps.image_tag.outputs.image_tag }}
+          labels: |
+            org.label-schema.vcs-ref=${{ github.sha }}
+            org.label-schema.version=${{ steps.image_tag.outputs.image_tag }}
           push: ${{ github.ref == 'refs/heads/main' }}
