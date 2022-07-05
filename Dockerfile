@@ -14,7 +14,9 @@ WORKDIR /app
 
 ENV PYTHONPATH /app
 
-RUN mkdir /github && mkdir /github/home
+RUN mkdir /github \ 
+    && mkdir /github/home \
+    && mkdir /github/home/.config
 
 RUN useradd -m python
 
