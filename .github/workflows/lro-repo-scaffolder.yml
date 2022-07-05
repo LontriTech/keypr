@@ -13,4 +13,4 @@ jobs:
       - name: 'LRO Repo Scaffolder'
         uses: ./lro-repo-scaffolder-action
         with:
-          github-pat: ${{ secrets.GITHUB_TOKEN }}
+          github-pat: ${{ secrets.PAT }}
