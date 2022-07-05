@@ -11,4 +11,4 @@ jobs:
       - name: 'LRO Repo Scaffolder'
         uses: ./lro-repo-scaffolder-action
         with:
-          config-file: 'lro_repo_scaffolder.ini'
+          config-file: '../../lro_repo_scaffolder.ini'
