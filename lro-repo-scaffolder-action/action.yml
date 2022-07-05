@@ -8,4 +8,4 @@ runs:
   using: 'docker'
   image: '../Dockerfile'
   args:
-    - ${{ inputs.config-file }}
+    - "--volume ${{ inputs.config-file }}"
