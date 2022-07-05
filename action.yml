@@ -4,7 +4,7 @@ author: 'OLeonardoRodrigues'
 
 branding:
   icon: 'sliders'
-  branding.color: 'green'
+  color: 'green'
 
 inputs:
   github-pat:
@@ -18,7 +18,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'docker pull ghcr.io/oleonardorodrigues/lro-repo-scaffolder:2022-07-05-73'
+  image: 'ghcr.io/oleonardorodrigues/lro-repo-scaffolder:2022-07-05-73'
   env:
     GH_PAT: ${{ inputs.github-pat }}
     CONFIG_FILE: ${{ inputs.config-file }}
