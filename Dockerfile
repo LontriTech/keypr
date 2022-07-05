@@ -8,10 +8,13 @@ COPY --chown=python:python requirements.txt ./
 
 RUN pip3 install -r requirements.txt
 
-RUN apt-get update && apt-get upgrade -y && apt-get install curl -y
-
-RUN curl https://github.com/cli/cli/releases/download/v2.7.0/gh_2.7.0_linux_arm64.deb \
-    && dpkg -i gh_2.7.0_linux_arm64.deb
+RUN apt-get update \
+    && apt-get upgrade -y \
+    && apt-get install curl -y \
+    && apt-get install git -y \
+    && curl -L https://github.com/cli/cli/releases/download/v2.7.0/gh_2.7.0_linux_amd64.deb \
+    > gh_2.7.0_linux_amd64.deb \
+    && dpkg -i ./gh_2.7.0_linux_amd64.deb
 
 COPY --chown=python:python src/lro_repo_scaffolder lro_repo_scaffolder
 
