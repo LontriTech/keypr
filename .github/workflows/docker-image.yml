@@ -30,6 +30,6 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           tags: |
-            ghcr.io/OLeonardoRodrigues/lro-repo-scaffolder:latest
-            ghcr.io/OLeonardoRodrigues/lro-repo-scaffolder:${{ steps.date.outputs.date }}-${{ github.run_number }}
+            ghcr.io/oleonardorodrigues/lro-repo-scaffolder:latest
+            ghcr.io/oleonardorodrigues/lro-repo-scaffolder:${{ steps.date.outputs.date }}-${{ github.run_number }}
           push: ${{ github.ref == 'refs/heads/master' }}
