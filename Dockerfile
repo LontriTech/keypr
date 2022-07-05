@@ -16,9 +16,10 @@ ENV PYTHONPATH /app
 
 RUN useradd -m python
 
-RUN mkdir $HOME/.config \
-    && chown -R python:python $HOME \
-    && chmod -R +w $HOME
+RUN mkdir ~/.config \
+    && chown -R `whoami` ~/.config \
+    && chmod -R u+w ~/.config \
+    && ls -la ~/.config
 
 COPY --chown=python:python requirements.txt ./
 
