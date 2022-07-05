@@ -19,7 +19,8 @@ RUN useradd -m python
 RUN mkdir /github \ 
     && mkdir /github/home \
     && mkdir /github/home/.config \
-    && chown python:python /github
+    && chown python:python /github \
+    && chmod +w /github/home/.config
 
 COPY --chown=python:python requirements.txt ./
 
