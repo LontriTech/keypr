@@ -2,7 +2,7 @@ on: [push]
 
 jobs:
   lro-repo-scaffolder:
-    permissions: read-all | write-all
+    permissions: write-all
     runs-on: ubuntu-latest
     name: "Run LRO Repo Scaffolder"
     steps:
