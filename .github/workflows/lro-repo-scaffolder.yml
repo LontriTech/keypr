@@ -1,0 +1,11 @@
+on: [push]
+
+jobs:
+  lro-repo-scaffolder:
+    runs-on: ubuntu-latest
+    name: "Run LRO Repo Scaffolder"
+    steps:
+      - name: 'LRO Repo Scaffolder'
+        uses: actions/lro-repo-scaffolder-action
+        with:
+          config-file: 'lro_repo_scaffolder.ini'

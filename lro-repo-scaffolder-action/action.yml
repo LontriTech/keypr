@@ -1,0 +1,11 @@
+name: 'LRO Repo Scaffolder'
+description: 'Runs Repository Scaffolder for GitHub.'
+inputs:
+  config-file:
+    description: 'Configuration file'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.config-file }}
