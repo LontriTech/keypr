@@ -1,13 +1,23 @@
 name: 'LRO Repo Scaffolder'
 description: 'Runs Repository Scaffolder for GitHub.'
+author: 'OLeonardoRodrigues'
+
+branding:
+  icon: 'sliders'
+  branding.color: 'green'
 
 inputs:
   github-pat:
     description: 'GitHub PAT.'
     required: true
 
+  config-file:
+    description: 'Configuration File Name.'
+    required: false
+    default: '.lro_repo_scaffolder'
+
 runs:
   using: 'docker'
-  image: '../Dockerfile'
+  image: 'docker pull ghcr.io/oleonardorodrigues/lro-repo-scaffolder:2022-07-05-73'
   env:
     GH_PAT: ${{ inputs.github-pat }}
