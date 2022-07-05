@@ -16,8 +16,9 @@ ENV PYTHONPATH /app
 
 RUN useradd -m python
 
-RUN chown -R python:python ~/.config \
-    && chmod -R u+w /github/home/.config
+RUN mkdir ~/.config \
+    && chown -R python:python ~/.config \
+    && chmod -R u+w ~/.config
 
 COPY --chown=python:python requirements.txt ./
 
