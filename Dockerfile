@@ -8,7 +8,7 @@ COPY --chown=python:python requirements.txt ./
 
 RUN pip3 install -r requirements.txt
 
-RUN apt-get install curl -y
+RUN apt-get update && apt-get upgrade -y && apt-get install curl -y
 
 RUN curl https://github.com/cli/cli/releases/download/v2.7.0/gh_2.7.0_linux_arm64.deb
 
