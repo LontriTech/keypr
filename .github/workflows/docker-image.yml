@@ -33,6 +33,6 @@ jobs:
             ghcr.io/oleonardorodrigues/lro-repo-scaffolder:latest
             ghcr.io/oleonardorodrigues/lro-repo-scaffolder:${{ steps.image_tag.outputs.image_tag }}
           labels: |
-            org.label-schema.vcs-ref=${{ github.sha }}
-            org.label-schema.version=${{ steps.image_tag.outputs.image_tag }}
+            org.opencontainers.image.revision=${{ github.sha }}
+            org.opencontainers.image.version=${{ steps.image_tag.outputs.image_tag }}
           push: ${{ github.ref == 'refs/heads/main' }}
