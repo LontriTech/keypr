@@ -7,6 +7,5 @@ def main():
     if(topics): set_topics(topics)
     if(options): set_options(options)
 
-
 if __name__ == '__main__':
     main()
