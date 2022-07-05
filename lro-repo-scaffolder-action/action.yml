@@ -10,4 +10,4 @@ runs:
   using: 'docker'
   image: '../Dockerfile'
   env:
-    - GH_PAT="${{ inputs.github-pat }}"
+    GH_PAT: ${{ inputs.github-pat }}
