@@ -26,7 +26,7 @@ RUN apt-get update \
     > gh_2.7.0_linux_amd64.deb \
     && dpkg -i ./gh_2.7.0_linux_amd64.deb
 
-COPY --chown=python:python src/lro_repo_scaffolder lro_repo_scaffolder
+COPY --chown=python:python src lro_repo_scaffolder
 
 USER python
 
