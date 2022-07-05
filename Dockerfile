@@ -14,9 +14,12 @@ WORKDIR /app
 
 ENV PYTHONPATH /app
 
-ENV GH_CONFIG_DIR /app
+ENV GH_CONFIG_DIR /app/gh_config
 
 RUN useradd -m python
+
+RUN chown -R python:python /app/gh_config \
+    && chmod +w /app/gh_config
 
 COPY --chown=python:python requirements.txt ./
 
