@@ -1,9 +1,13 @@
 name: 'LRO Repo Scaffolder'
 description: 'Runs Repository Scaffolder for GitHub.'
+
 inputs:
-  config-file:
-    description: 'Configuration file'
+  github-pat:
+    description: 'GitHub PAT.'
     required: true
+
 runs:
   using: 'docker'
   image: '../Dockerfile'
+  args:
+    - '-e ${{ inputs.github-pat }}'
