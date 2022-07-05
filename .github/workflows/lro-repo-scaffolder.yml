@@ -6,7 +6,6 @@ jobs:
   lro-repo-scaffolder:
     name: "Run LRO Repo Scaffolder"
     runs-on: ubuntu-latest
-    name: "Run LRO Repo Scaffolder"
     steps:
       - name: Checkout
         uses: actions/checkout@v3
