@@ -8,3 +8,4 @@ topic4
 default-branch = main
 delete-branch-on-merge
 description = "Repository Scaffolder for GitHub."
+enable-projects = false
