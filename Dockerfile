@@ -4,8 +4,12 @@ LABEL org.opencontainers.image.title="LRO Repo Scaffolder" \
       org.opencontainers.image.description="Repository Scaffolder for GitHub." \
       org.opencontainers.image.url="https://github.com/OLeonardoRodrigues/lro-repo-scaffolder/blob/main/README.md" \
       org.opencontainers.image.documentation="https://github.com/OLeonardoRodrigues/lro-repo-scaffolder/wiki" \
-      org.opencontainers.image.source="https://github.com/OLeonardoRodrigues/lro-repo-scaffolder"
-
+      org.opencontainers.image.source="https://github.com/OLeonardoRodrigues/lro-repo-scaffolder" \
+      org.opencontainers.image.licenses="GNU General Public License v3.0 only" \
+      org.opencontainers.image.vendor="Leonardo Rodrigues de Oliveira - OLeonardoRodrigues" \
+      org.opencontainers.image.base.name="registry.hub.docker.com/python/python:3.9-slim-buster" \
+      org.opencontainers.image.base.digest="sha256:a32a3204b2b44f3e7e699e5b4af1a5784b6a9b8a4f4446dbb8a3aa65375a8d7d"
+      
 WORKDIR /app
 
 RUN useradd -m python
