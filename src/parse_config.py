@@ -7,7 +7,7 @@ def parse_config():
 
     return(topics, options)
 
-def parse_topics(filename=path.abspath("lro_repo_scaffolder.ini"), section='topics'):
+def parse_topics(filename=path.abspath("/github/workspace/lro_repo_scaffolder.ini"), section='topics'):
     topics = ""
     parser = ConfigParser(allow_no_value=True)
     parser.read(filename)
@@ -19,7 +19,7 @@ def parse_topics(filename=path.abspath("lro_repo_scaffolder.ini"), section='topi
 
     return(topics)
 
-def parse_options(filename=path.abspath("lro_repo_scaffolder.ini"), section='options'):
+def parse_options(filename=path.abspath("/github/workspace/lro_repo_scaffolder.ini"), section='options'):
     options = {}
     parser = ConfigParser(allow_no_value=True)
     parser.read(filename)
