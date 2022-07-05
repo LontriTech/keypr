@@ -4,7 +4,7 @@ author: 'OLeonardoRodrigues'
 
 branding:
   icon: 'sliders'
-  branding.color: 'green'
+  color: 'green'
 
 inputs:
   github-pat:
