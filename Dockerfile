@@ -12,6 +12,8 @@ LABEL org.opencontainers.image.title="LRO Repo Scaffolder" \
       
 WORKDIR /app
 
+ENV PYTHONPATH /app
+
 RUN useradd -m python
 
 COPY --chown=python:python requirements.txt ./
