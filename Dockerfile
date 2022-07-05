@@ -1,5 +1,11 @@
 FROM python:3.9-slim-buster
 
+LABEL org.label-schema.schema-version="1.0" \
+      org.label-schema.name="LRO Repo Scaffolder" \
+      org.label-schema.description = "Repository Scaffolder for GitHub." \
+      org.label-schema.usage= "./README.md" \
+      org.label-schema.vcs-url = "https://github.com/OLeonardoRodrigues/lro-repo-scaffolder"
+
 WORKDIR /app
 
 RUN useradd -m python
