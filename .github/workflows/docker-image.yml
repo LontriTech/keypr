@@ -9,9 +9,11 @@ jobs:
     name: "Build and Publish Docker Image"
     runs-on: ubuntu-latest
     steps:        
-      - name: Set Image Tag
-        run: echo "::set-output name=image_tag::$(date +'%Y-%m-%d')-${{ github.run_number }}"
-        id: image_tag
+      - name: Set Image Info
+        run: |
+          echo "::set-output name=tag::$(date +'%Y-%m-%d')-${{ github.run_number }}"
+          echo "::set-output name=created::$(date --rfc-3339=seconds | sed 's/ /T/')"
+        id: image_info
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -34,6 +36,6 @@ jobs:
             ghcr.io/oleonardorodrigues/lro-repo-scaffolder:${{ steps.image_tag.outputs.image_tag }}
           labels: |
             org.opencontainers.image.revision=${{ github.sha }}
-            org.opencontainers.image.version=${{ steps.image_tag.outputs.image_tag }}
-            org.opencontainers.image.created=$(date --rfc-3339=seconds | sed 's/ /T/')
+            org.opencontainers.image.version=${{ steps.image_info.outputs.tag }}
+            org.opencontainers.image.created=${{ steps.image_info.outputs.created }}
           push: ${{ github.ref == 'refs/heads/main' }}
