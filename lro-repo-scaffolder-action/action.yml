@@ -10,4 +10,4 @@ runs:
   using: 'docker'
   image: '../Dockerfile'
   args:
-    - '-e ${{ inputs.github-pat }}'
+    - '-e GH_PAT=${{ inputs.github-pat }}'
