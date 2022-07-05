@@ -12,7 +12,7 @@ inputs:
     required: true
 
   config-file:
-    description: 'Configuration File Name.'
+    description: 'Configuration File Name or Path.'
     required: false
     default: '.lro_repo_scaffolder'
 
@@ -21,3 +21,4 @@ runs:
   image: 'docker pull ghcr.io/oleonardorodrigues/lro-repo-scaffolder:2022-07-05-73'
   env:
     GH_PAT: ${{ inputs.github-pat }}
+    CONFIG_FILE: ${{ inputs.config-file }}

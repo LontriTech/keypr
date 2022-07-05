@@ -1,5 +1,5 @@
 from configparser import ConfigParser
-from os import path
+from os import path, environ
 
 def parse_config():
     topics = parse_topics()
@@ -7,7 +7,7 @@ def parse_config():
 
     return(topics, options)
 
-def parse_topics(filename=path.abspath("/github/workspace/.lro_repo_scaffolder"), section='topics'):
+def parse_topics(filename=path.abspath(environ.get('config_file')), section='topics'):
     topics = ""
     parser = ConfigParser(allow_no_value=True)
     parser.read(filename)
@@ -19,7 +19,7 @@ def parse_topics(filename=path.abspath("/github/workspace/.lro_repo_scaffolder")
 
     return(topics)
 
-def parse_options(filename=path.abspath("/github/workspace/.lro_repo_scaffolder"), section='options'):
+def parse_options(filename=path.abspath(environ.get('config_file')), section='options'):
     options = {}
     parser = ConfigParser(allow_no_value=True)
     parser.read(filename)
