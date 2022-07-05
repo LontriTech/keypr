@@ -14,12 +14,9 @@ WORKDIR /app
 
 ENV PYTHONPATH /app
 
-RUN useradd -m python
+ENV GH_CONFIG_DIR /app
 
-RUN mkdir ~/.config \
-    && chown -R `whoami` ~ \
-    && chmod -R 777 ~ \
-    && ls -la ~
+RUN useradd -m python
 
 COPY --chown=python:python requirements.txt ./
 
