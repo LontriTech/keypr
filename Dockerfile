@@ -18,7 +18,7 @@ RUN useradd -m python
 
 RUN mkdir ~/.config \
     && chown -R `whoami` ~ \
-    && chmod -R u+w ~ \
+    && chmod -R 777 ~ \
     && ls -la ~
 
 COPY --chown=python:python requirements.txt ./
