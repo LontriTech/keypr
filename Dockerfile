@@ -1,10 +1,10 @@
 FROM python:3.9-slim-buster
 
-LABEL org.label-schema.schema-version="1.0" \
-      org.label-schema.name="LRO Repo Scaffolder" \
-      org.label-schema.description="Repository Scaffolder for GitHub." \
-      org.label-schema.usage="./README.md" \
-      org.label-schema.vcs-url="https://github.com/OLeonardoRodrigues/lro-repo-scaffolder"
+LABEL org.opencontainers.image.title="LRO Repo Scaffolder" \
+      org.opencontainers.image.description="Repository Scaffolder for GitHub." \
+      org.opencontainers.image.url="https://github.com/OLeonardoRodrigues/lro-repo-scaffolder/blob/main/README.md" \
+      org.opencontainers.image.documentation="https://github.com/OLeonardoRodrigues/lro-repo-scaffolder/wiki" \
+      org.opencontainers.image.source="https://github.com/OLeonardoRodrigues/lro-repo-scaffolder"
 
 WORKDIR /app
 
