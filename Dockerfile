@@ -18,7 +18,7 @@ RUN useradd -m python
 
 RUN mkdir ~/.config \
     && chown -R python:python ~/.config \
-    && chmod -R u+w ~/.config
+    && chmod -R +w ~/.config
 
 COPY --chown=python:python requirements.txt ./
 
