@@ -5,7 +5,8 @@ on:
     branches: [ 'main' ]
 
 jobs:
-  portainer-server:
+  docker-build-and-push:
+    name: "Build and Publish Docker Image"
     runs-on: ubuntu-latest
     steps:
       - name: Get current date
