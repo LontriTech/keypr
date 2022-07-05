@@ -14,6 +14,8 @@ WORKDIR /app
 
 ENV PYTHONPATH /app
 
+RUN mkdir /github/home
+
 RUN useradd -m python
 
 COPY --chown=python:python requirements.txt ./
