@@ -31,7 +31,6 @@ jobs:
       - name: Build image and push to Docker Hub and GitHub Container Registry
         uses: docker/build-push-action@v3
         with:
-          context: .
           platforms: linux/amd64,linux/arm64
           tags: |
             ghcr.io/oleonardorodrigues/lro-repo-scaffolder:latest
