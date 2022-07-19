@@ -1,18 +1,16 @@
-name: "Run LRO Repo Scaffolder"
+name: "Run Repo Keeper"
 
 on: [push]
 
-permissions: write-all
-
 jobs:
   lro-repo-scaffolder:
-    name: "Run LRO Repo Scaffolder"
+    name: "Run Repo Keeper"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
       - name: LRO Repo Scaffolder
-        uses: OLeonardoRodrigues/lro-repo-scaffolder@v0.1.1
+        uses: OLeonardoRodrigues/repo-keeper@v0.1.1
         with:
           github-pat: ${{ secrets.PAT }}
