@@ -1,5 +1,5 @@
-name: 'LRO Repo Scaffolder'
-description: 'Runs Repository Scaffolder for GitHub.'
+name: 'Repo Keeper'
+description: 'Runs Repo Keeper'
 author: 'OLeonardoRodrigues'
 
 branding:
