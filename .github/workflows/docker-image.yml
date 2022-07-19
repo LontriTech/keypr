@@ -8,7 +8,7 @@ jobs:
   docker-build-and-push:
     name: "Build and Publish Docker Image"
     runs-on: ubuntu-latest
-    steps:        
+    steps:
       - name: Set Image Info
         run: |
           echo "::set-output name=tag::$(date +'%Y-%m-%d')-${{ github.run_number }}"
@@ -28,7 +28,16 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.github_token }}
 
-      - name: Build image and push to Docker Hub and GitHub Container Registry
+      - name: Build and export to Docker
+        uses: docker/build-push-action@v3
+        with:
+          load: true
+          tags: repo-keeper:${{ steps.image_info.outputs.tag }}
+
+      - name: Test
+        run: docker run --rm repo-keeper:${{ steps.image_info.outputs.tag }}
+
+      - name: Build image and push to GitHub Container Registry
         uses: docker/build-push-action@v3
         with:
           platforms: linux/amd64
@@ -42,4 +51,3 @@ jobs:
           push: ${{ github.ref == 'refs/heads/main' }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          
