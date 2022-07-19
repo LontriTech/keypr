@@ -2,13 +2,16 @@ from configparser import ConfigParser
 from os import path, environ
 
 def parse_config():
-    filename = path.abspath(environ.get('CONFIG_FILE'))
+    try:
+        filename = path.abspath(environ.get('CONFIG_FILE'))
+    except:
+        filename = '.repo-keeper'
     topics = parse_topics(filename=filename)
     options = parse_options(filename=filename)
 
     return(topics, options)
 
-def parse_topics(filename=path.abspath('.repo-keeper'), section='topics'):
+def parse_topics(filename, section='topics'):
     topics = ""
     parser = ConfigParser(allow_no_value=True)
     parser.read(filename)
@@ -20,7 +23,7 @@ def parse_topics(filename=path.abspath('.repo-keeper'), section='topics'):
 
     return(topics)
 
-def parse_options(filename=path.abspath('.repo-keeper'), section='options'):
+def parse_options(filename, section='options'):
     options = {}
     parser = ConfigParser(allow_no_value=True)
     parser.read(filename)
