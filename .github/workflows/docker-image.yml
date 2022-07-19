@@ -31,6 +31,8 @@ jobs:
       - name: Build image and push to Docker Hub and GitHub Container Registry
         uses: docker/build-push-action@v3
         with:
+          context: .
+          platforms: linux/amd64,linux/arm64
           tags: |
             ghcr.io/oleonardorodrigues/lro-repo-scaffolder:latest
             ghcr.io/oleonardorodrigues/lro-repo-scaffolder:${{ steps.image_info.outputs.tag }}
@@ -39,3 +41,6 @@ jobs:
             org.opencontainers.image.version=${{ steps.image_info.outputs.tag }}
             org.opencontainers.image.created=${{ steps.image_info.outputs.created }}
           push: ${{ github.ref == 'refs/heads/main' }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          
