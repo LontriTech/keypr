@@ -18,7 +18,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/oleonardorodrigues/lro-repo-scaffolder:2022-07-05-73'
+  image: 'docker://ghcr.io/oleonardorodrigues/lro-repo-scaffolder:latest'
   env:
     GH_PAT: ${{ inputs.github-pat }}
     CONFIG_FILE: ${{ inputs.config-file }}
