@@ -33,8 +33,8 @@ jobs:
         with:
           platforms: linux/amd64
           tags: |
-            ghcr.io/oleonardorodrigues/lro-repo-scaffolder:latest
-            ghcr.io/oleonardorodrigues/lro-repo-scaffolder:${{ steps.image_info.outputs.tag }}
+            ghcr.io/oleonardorodrigues/repo-keeper:latest
+            ghcr.io/oleonardorodrigues/repo-keeper:${{ steps.image_info.outputs.tag }}
           labels: |
             org.opencontainers.image.revision=${{ github.sha }}
             org.opencontainers.image.version=${{ steps.image_info.outputs.tag }}
