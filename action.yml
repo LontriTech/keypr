@@ -14,11 +14,11 @@ inputs:
   config-file:
     description: 'Configuration File Name or Path.'
     required: false
-    default: '.lro_repo_scaffolder'
+    default: '.repo-keeper'
 
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/oleonardorodrigues/lro-repo-scaffolder:latest'
+  image: 'docker://ghcr.io/oleonardorodrigues/repo-keeper:latest'
   env:
     GH_PAT: ${{ inputs.github-pat }}
     CONFIG_FILE: ${{ inputs.config-file }}

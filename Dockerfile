@@ -1,10 +1,10 @@
 FROM python:3.9-slim-buster
 
-LABEL org.opencontainers.image.title="LRO Repo Scaffolder" \
-      org.opencontainers.image.description="Repository Scaffolder for GitHub." \
-      org.opencontainers.image.url="https://github.com/OLeonardoRodrigues/lro-repo-scaffolder/blob/main/README.md" \
-      org.opencontainers.image.documentation="https://github.com/OLeonardoRodrigues/lro-repo-scaffolder/wiki" \
-      org.opencontainers.image.source="https://github.com/OLeonardoRodrigues/lro-repo-scaffolder" \
+LABEL org.opencontainers.image.title="Repo Keeper" \
+      org.opencontainers.image.description="Configuration Keeper for GitHub Repositories." \
+      org.opencontainers.image.url="https://github.com/OLeonardoRodrigues/repo-keeper/blob/main/README.md" \
+      org.opencontainers.image.documentation="https://github.com/OLeonardoRodrigues/repo-keeper/wiki" \
+      org.opencontainers.image.source="https://github.com/OLeonardoRodrigues/repo-keeper" \
       org.opencontainers.image.licenses="GPL-3.0-only" \
       org.opencontainers.image.vendor="Leonardo Rodrigues de Oliveira - OLeonardoRodrigues" \
       org.opencontainers.image.base.name="registry.hub.docker.com/python/python:3.9-slim-buster" \
@@ -34,8 +34,8 @@ RUN apt-get update \
     > gh_2.7.0_linux_amd64.deb \
     && dpkg -i ./gh_2.7.0_linux_amd64.deb
 
-COPY --chown=python:python src lro_repo_scaffolder
+COPY --chown=python:python src repo_keeper
 
 USER python
 
-CMD [ "python3.9", "-m" , "lro_repo_scaffolder"]
+CMD [ "python3.9", "-m" , "repo_keeper"]
