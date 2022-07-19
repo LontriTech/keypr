@@ -7,7 +7,7 @@ def parse_config():
 
     return(topics, options)
 
-def parse_topics(filename=path.abspath(environ.get('config_file')), section='topics'):
+def parse_topics(filename=path.abspath(environ.get('CONFIG_FILE')), section='topics'):
     topics = ""
     parser = ConfigParser(allow_no_value=True)
     parser.read(filename)
@@ -19,7 +19,7 @@ def parse_topics(filename=path.abspath(environ.get('config_file')), section='top
 
     return(topics)
 
-def parse_options(filename=path.abspath(environ.get('config_file')), section='options'):
+def parse_options(filename=path.abspath(environ.get('CONFIG_FILE')), section='options'):
     options = {}
     parser = ConfigParser(allow_no_value=True)
     parser.read(filename)
