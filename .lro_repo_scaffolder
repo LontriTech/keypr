@@ -7,5 +7,5 @@ topic4
 [options]
 default-branch = main
 delete-branch-on-merge
-description = "Configuration Keeper for GitHub Repositories."
+description = "Configuration Keeper for GitHub Repositories"
 enable-projects
