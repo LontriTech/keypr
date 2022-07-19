@@ -1,3 +1,3 @@
-# LRO Repo Scaffolder
+# Repo Keeper
 
-Repository Scaffolder for GitHub.
+Configuration Keeper for GitHub Repositories.
