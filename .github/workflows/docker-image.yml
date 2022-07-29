@@ -32,18 +32,18 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           load: true
-          tags: repo-keeper:${{ steps.image_info.outputs.tag }}
+          tags: keypr:${{ steps.image_info.outputs.tag }}
 
       - name: Test
-        run: docker run --rm repo-keeper:${{ steps.image_info.outputs.tag }}
+        run: docker run --rm keypr:${{ steps.image_info.outputs.tag }}
 
       - name: Build image and push to GitHub Container Registry
         uses: docker/build-push-action@v3
         with:
           platforms: linux/amd64
           tags: |
-            ghcr.io/oleonardorodrigues/repo-keeper:latest
-            ghcr.io/oleonardorodrigues/repo-keeper:${{ steps.image_info.outputs.tag }}
+            ghcr.io/fr-platform/keypr:latest
+            ghcr.io/fr-platform/keypr:${{ steps.image_info.outputs.tag }}
           labels: |
             org.opencontainers.image.revision=${{ github.sha }}
             org.opencontainers.image.version=${{ steps.image_info.outputs.tag }}
