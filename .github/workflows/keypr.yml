@@ -3,7 +3,7 @@ name: "Run Repo Keeper"
 on: [push]
 
 jobs:
-  lro-repo-scaffolder:
+  keypr:
     name: "Run Repo Keeper"
     runs-on: ubuntu-latest
     steps:
@@ -11,6 +11,6 @@ jobs:
         uses: actions/checkout@v3
 
       - name: LRO Repo Scaffolder
-        uses: OLeonardoRodrigues/repo-keeper@v0.2.0
+        uses: fr-platform/keypr@v0.2.0
         with:
           github-pat: ${{ secrets.PAT }}
