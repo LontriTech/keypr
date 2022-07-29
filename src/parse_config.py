@@ -5,7 +5,7 @@ def parse_config():
     try:
         filename = path.abspath(environ.get('CONFIG_FILE'))
     except:
-        filename = '.repo-keeper'
+        filename = '.keypr'
     topics = parse_topics(filename=filename)
     options = parse_options(filename=filename)
 

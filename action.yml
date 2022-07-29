@@ -1,5 +1,5 @@
-name: 'Repo Keeper'
-description: 'Runs Repo Keeper'
+name: 'Keypr'
+description: 'Runs Keypr'
 author: 'OLeonardoRodrigues'
 
 branding:
@@ -14,11 +14,11 @@ inputs:
   config-file:
     description: 'Configuration File Name or Path.'
     required: false
-    default: '.repo-keeper'
+    default: '.keypr'
 
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/oleonardorodrigues/repo-keeper:latest'
+  image: 'docker://ghcr.io/oleonardorodrigues/keypr:latest'
   env:
     GH_PAT: ${{ inputs.github-pat }}
     CONFIG_FILE: ${{ inputs.config-file }}
